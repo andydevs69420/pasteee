@@ -1,0 +1,32 @@
+@import 'color';
+@import 'mixin';
+
+
+.nav-bar 
+{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    padding: 0 25px;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
+    background-color: $GREEN;
+    box-shadow: 0px 2px 6px -2px rgba(0,0,0,0.4);
+    @include onMediumDevice {
+        justify-content: center;
+        height: 56px;
+    }
+}
+
+.brand
+{
+    display: block;
+    font-size: 25px;
+    font-weight: bolder;
+    color: $WHITE;
+    user-select: none;
+    @include onMediumDevice {
+        font-size: 24px;
+    }
+}

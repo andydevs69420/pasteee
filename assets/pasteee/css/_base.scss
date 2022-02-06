@@ -1,0 +1,41 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import 'color';
+@import 'mixin';
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+* ::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html 
+{
+    background-color: $BLUISH-WHITE;
+}
+
+body
+{
+    display: block;
+
+    width: 100vw;
+    height: 100vh;
+
+    min-width: 760px;
+    min-height: 720px;
+
+    @include onMediumDevice {
+        min-width: 260px;
+        min-height: 540px;
+    }
+}
+

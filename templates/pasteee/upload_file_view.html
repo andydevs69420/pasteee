@@ -1,0 +1,57 @@
+{% extends './base.html' %}
+
+{% load static %}
+
+{% block head_block %}
+
+    <title>PASTEEE | image clipboard</title>
+    <link rel="stylesheet" href="{% static 'pasteee/css/index.css' %}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+{% endblock head_block %}
+
+{% block body_block %}
+
+    {% include './navbar.html' %}
+
+    <div class="wrapper">
+
+        <form class="center-panel" action="{% url 'on_upload' %}" method="POST">
+
+            {% csrf_token %}
+
+            <span class="link-holder" role="text">Upload image file</span>
+
+            <input id="file-pick" class="file-picker" type="file" accept="image/*" name="image">    
+
+            <label class="upload-btn mdc-button mdc-button--raised mdc-button--leading" for="file-pick">
+
+                <span class="mdc-button__ripple"></span>
+                <i class="upload-btn-icon material-icons mdc-button__icon" aria-hidden=true>upload</i>
+                <span class="upload-btn-label mdc-button__label">Upload</span>
+
+            </label>
+
+        </form>
+
+    </div>
+
+{% endblock body_block %}
+
+
+{% block js_block %}
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        
+        $("#file-pick").change((e) => {
+
+            $("form").submit();
+
+        });
+
+    </script>
+{% endblock js_block %}
+

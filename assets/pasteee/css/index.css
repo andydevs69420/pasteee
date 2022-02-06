@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+.nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  padding: 0 25px;
+  width: 100%;
+  height: 70px;
+  z-index: 1000;
+  background-color: #62c22a;
+  -webkit-box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (min-width: 0px) and (max-width: 760px) {
+  .nav-bar {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 56px;
+  }
+}
+
+.brand {
+  display: block;
+  font-size: 25px;
+  font-weight: bolder;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 760px) {
+  .brand {
+    font-size: 24px;
+  }
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* ::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html {
+  background-color: #f0f0f0;
+}
+
+body {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  min-width: 760px;
+  min-height: 720px;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 760px) {
+  body {
+    min-width: 260px;
+    min-height: 540px;
+  }
+}
+
+.wrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.center-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 5px 0;
+  width: 40%;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 760px) {
+  .center-panel {
+    all: initial;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.file-picker {
+  display: none;
+}
+
+.link-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 0 15px;
+  width: calc(95% - 90px);
+  height: 35px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  color: black;
+  background-color: white;
+  -webkit-box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (min-width: 0px) and (max-width: 760px) {
+  .link-holder {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 25px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    color: #909192;
+    background-color: initial;
+    -webkit-box-shadow: initial;
+            box-shadow: initial;
+  }
+}
+
+.upload-btn {
+  width: 90px !important;
+  height: 35px !important;
+  border-radius: 3px !important;
+  background-color: #62c22a !important;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 760px) {
+  .upload-btn {
+    position: absolute !important;
+    right: 15px !important;
+    bottom: 15px !important;
+    width: 45px !important;
+    min-width: 45px !important;
+    height: 45px !important;
+    min-height: 45px !important;
+    border-radius: 100% !important;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 760px) {
+  .upload-btn-icon {
+    margin: 0 !important;
+  }
+}
+
+.upload-btn-label {
+  text-transform: initial !important;
+  font-size: 13px !important;
+  font-weight: bold !important;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 760px) {
+  .upload-btn-label {
+    display: none !important;
+  }
+}
+/*# sourceMappingURL=index.css.map */
