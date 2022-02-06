@@ -1,10 +1,27 @@
 import os
+from cryptography.fernet import Fernet
 from datetime import datetime , timedelta
 
 
-__ALL__ = [ "getfileName" , "uploadDate" , "expiryDate" ]
+__ALL__ = [ "hash" , "getfileName" , "uploadDate" , "expiryDate" ]
 
+# GLOBAL KEY
+__KEY = b'CQ4PoqKT5LLQA1COk0mV0SINOqeuIrUhzNUo2K1xBG8='
 
+def hash(_str:str,ishash:bool=True, key:bytes=__KEY):
+
+    if  type(ishash) != bool:
+        ishash = True
+
+    if  len(key) <= 0 or type(key) != bytes:
+        key = __KEY
+
+    gkey = Fernet(key)
+
+    if  ishash:
+        return gkey.encrypt(_str.encode()).decode()
+    
+    return gkey.decrypt(_str.encode()).decode()
 
 # extract filename only
 def getFileName(path:str):
@@ -24,7 +41,7 @@ def uploadDate():
 # set 7 days expiration
 def expiryDate(day:int|None=7):
 
-    if  day == None:
+    if  day == None or type(day) != int:
         day = 7
     
     if  day < 1:

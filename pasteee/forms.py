@@ -21,4 +21,7 @@ class ImageForm(forms.ModelForm):
                 }
             )
         }
+        labels = {
+            'img_link' : ''
+        }
 

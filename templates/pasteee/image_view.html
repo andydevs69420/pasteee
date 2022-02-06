@@ -1,19 +1,33 @@
 
 {% extends './base.html' %}
 
+{% load static %}
+
 
 {% block head_block %}
     <title>PASTEEE | image view</title>
+    <link rel="stylesheet" href="{% static 'pasteee/css/image_view.css' %}">
+
+
 {% endblock head_block%}
 
 
 {% block body_block %}
-    <h1>FOOOC</h1>
+    
+    {% include './navbar.html' %}
 
-    {% if   img %}
-        {% load static %}
-        <img src="{% static img.img_link.url %}"/>
-    {% endif %}
+    <div class="view-wrapper">
+
+        {% if file %}
+            {% load static %}
+            <span class="image-wrapper">
+                <img class="image" src="{% static file %}" alt="image">
+            </span>
+        {% else %}
+            <h1>File does not exist anymore!</h1>
+        {% endif %}
+
+    </div>
 
 {% endblock body_block%}
 

@@ -1,11 +1,11 @@
 from django.shortcuts import render ,redirect
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 
 from .forms import ImageForm
 from .models import ImageLink
 
 
-from .tools import getFileName
+from .tools import hash, getFileName 
 
 # Create your views here.
 
@@ -35,21 +35,32 @@ def on_upload(request):
         form = ImageForm()
     
     latest_itm = ImageLink.objects.latest('id')
-
-    link  = latest_itm.img_link
-    name = getFileName(link)
+    id = hash(str(latest_itm.id))
     
-    return HttpResponseRedirect(f"/viewer/?file={name}")
+    return HttpResponseRedirect(f"/viewer/?id={id}")
 
 
 def viewer(request):
 
     ctx = {}
 
-    if  request.method == "GET":
+    if  request.method == "POST":
+        return HttpResponseRedirect('/')
 
-        if  request.GET['file'] != None:
-            
-            ctx['file'] = request.GET['file']
+    else:
+        
+        if  'id' not in request.GET:
+            pass
+
+        try:
+            gID  = hash(str(request.GET['id']),ishash = False)
+            file = ImageLink.objects.get(id=gID)
+            link = file.img_link
+            name = getFileName(link.url)
+            ctx['file'] = name
+        except Exception:
+            # consider error if the id is not 
+            # base66 while convertion
+            pass
 
     return render(request,'pasteee/image_view.html',ctx)
