@@ -1,0 +1,22 @@
+
+{% extends './base.html' %}
+
+
+{% block head_block %}
+    <title>PASTEEE | image view</title>
+{% endblock head_block%}
+
+
+{% block body_block %}
+    <h1>FOOOC</h1>
+
+    {% if   img %}
+        {% load static %}
+        <img src="{% static img.img_link.url %}"/>
+    {% endif %}
+
+{% endblock body_block%}
+
+
+{% block js_block %}
+{% endblock js_block %}

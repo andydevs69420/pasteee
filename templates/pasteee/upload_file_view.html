@@ -19,13 +19,13 @@
 
     <div class="wrapper">
 
-        <form class="center-panel" action="{% url 'on_upload' %}" method="POST">
+        <form class="center-panel" action="{% url 'on_upload' %}" method="POST" enctype="multipart/form-data">
 
             {% csrf_token %}
 
-            <span class="link-holder" role="text">Upload image file</span>
+            <span id="link-hold" class="link-holder" role="text">Upload image file</span>
 
-            <input id="file-pick" class="file-picker" type="file" accept="image/*" name="image">    
+            {{ form.as_p }}  
 
             <label class="upload-btn mdc-button mdc-button--raised mdc-button--leading" for="file-pick">
 
@@ -47,8 +47,14 @@
     <script type="text/javascript">
         
         $("#file-pick").change((e) => {
+            
+            let file = $("#file-pick")[0].files[0];
 
-            $("form").submit();
+            if (file != undefined || file != null)
+            {
+                $("#link-hold").text(file.name);
+                $("form").submit();
+            }
 
         });
 
