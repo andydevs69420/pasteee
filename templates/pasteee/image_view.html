@@ -7,8 +7,6 @@
 {% block head_block %}
     <title>PASTEEE | image view</title>
     <link rel="stylesheet" href="{% static 'pasteee/css/image_view.css' %}">
-
-
 {% endblock head_block%}
 
 
@@ -18,13 +16,20 @@
 
     <div class="view-wrapper">
 
-        {% if file %}
+        {% if not file %}
+
+            <h1>File does not exist anymore!</h1>
+
+        {% else %}
+
             {% load static %}
+
             <span class="image-wrapper">
                 <img class="image" src="{% static file %}" alt="image">
             </span>
-        {% else %}
-            <h1>File does not exist anymore!</h1>
+            
+            <span class="trigger"></span>
+
         {% endif %}
 
     </div>

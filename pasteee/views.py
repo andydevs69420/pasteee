@@ -55,10 +55,13 @@ def viewer(request):
         try:
             gID  = hash(str(request.GET['id']),ishash = False)
             file = ImageLink.objects.get(id=gID)
-            link = file.img_link
-            name = getFileName(link.url)
-            ctx['file'] = name
-        except Exception:
+
+            if  file:
+                link = file.img_link
+                name = getFileName(link.url)
+                ctx['file'] = name
+
+        except Exception as err:
             # consider error if the id is not 
             # base66 while convertion
             pass
