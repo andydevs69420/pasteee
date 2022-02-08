@@ -7,6 +7,13 @@
 {% block head_block %}
     <title>PASTEEE | image view</title>
     <link rel="stylesheet" href="{% static 'pasteee/css/image_view.css' %}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    {% comment %} materialize {% endcomment %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 {% endblock head_block%}
 
 
@@ -18,7 +25,10 @@
 
         {% if not file %}
 
-            <h1>File does not exist anymore!</h1>
+            <div class="fna-wrapper">
+                <i class="fna-icon material-icons" aria-hidden=true>folder_off</i>
+                <span class="fna" role="text">File is no longer available!</span>
+            </div>
 
         {% else %}
 
@@ -28,7 +38,12 @@
                 <img class="image" src="{% static file %}" alt="image">
             </span>
             
-            <span class="trigger"></span>
+            <button id="get-link" class="upload-btn mdc-button mdc-button--raised mdc-button--leading" for="file-pick">
+
+                <span class="mdc-button__ripple"></span>
+                <i class="upload-btn-icon material-icons mdc-button__icon" aria-hidden=true>link</i>
+
+            </button>
 
         {% endif %}
 
@@ -38,4 +53,9 @@
 
 
 {% block js_block %}
+
+    {% load static %}
+    
+    <script type="text/javascript" src="{% static 'pasteee/js/image_view.js'%}"></script>
+
 {% endblock js_block %}

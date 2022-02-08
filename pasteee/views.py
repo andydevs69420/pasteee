@@ -50,7 +50,7 @@ def viewer(request):
     else:
         
         if  'id' not in request.GET:
-            pass
+            return HttpResponseRedirect(f"/")
 
         try:
             gID  = hash(str(request.GET['id']),ishash = False)

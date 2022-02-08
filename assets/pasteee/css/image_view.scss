@@ -1,3 +1,7 @@
+/*
+ *   Copyright (c) 2022 
+ *   All rights reserved.
+ */
 
 
 @import 'nav';
@@ -16,8 +20,42 @@
     height: auto;
     min-height: 100%;
     padding-top: 70px;
+    user-select: none;
     @include onMediumDevice {
         padding-top: 56px;
+    }
+}
+
+
+.fna-wrapper
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+
+.fna-icon
+{
+    width: auto !important;
+    margin: 0 !important;
+    font-size: 55px !important;
+    color: $GRAY !important;
+
+    @include onMediumDevice {
+        font-size: 35px !important;
+    }
+}
+
+.fna
+{
+    font-size: 30px;
+    font-weight: bold;
+    @include onMediumDevice {
+        font-size: 18px;
     }
 }
 
@@ -43,18 +81,35 @@
     max-height: 100%;
 }
 
-.trigger
+
+.upload-btn
 {
-    display: none;
-    @include onMediumDevice {
-        display: block;
-        position: fixed;
-        bottom: 15px;
-        width: 60%;
-        height: 6px;
-        border-radius: 3px;
-        background-color: $GRAY;
-        box-shadow: 0px 3px 6px -2px rgba(0,0,0,0.2);
-    }
-    
+    position: absolute !important;
+    right: 15px !important;
+    bottom: 15px !important;
+    width: 45px !important;
+    min-width: 45px !important;
+    height: 45px !important;
+    min-height: 45px !important;
+    border-radius: 100% !important;
+    background-color: $GREEN !important;
 }
+
+.upload-btn-icon
+{
+    margin: 0 !important;
+}
+
+
+#toast-container
+{
+    @include onMediumDevice {
+        bottom: 0 !important;
+    }
+}
+
+.toast
+{
+    color: $GREEN !important;
+}
+

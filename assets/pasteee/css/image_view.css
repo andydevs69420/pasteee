@@ -1,3 +1,15 @@
+/*
+ *   Copyright (c) 2022 
+ *   All rights reserved.
+ */
+/*
+ *   Copyright (c) 2022 
+ *   All rights reserved.
+ */
+/*
+ *   Copyright (c) 2022 
+ *   All rights reserved.
+ */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 .nav-bar {
   display: -webkit-box;
@@ -46,6 +58,10 @@
   }
 }
 
+/*
+ *   Copyright (c) 2022 
+ *   All rights reserved.
+ */
 * {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -81,6 +97,10 @@ body {
   }
 }
 
+/*
+ *   Copyright (c) 2022 
+ *   All rights reserved.
+ */
 .view-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -98,11 +118,59 @@ body {
   height: auto;
   min-height: 100%;
   padding-top: 70px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 760px) {
   .view-wrapper {
     padding-top: 56px;
+  }
+}
+
+.fna-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: auto;
+  height: auto;
+}
+
+.fna-icon {
+  width: auto !important;
+  margin: 0 !important;
+  font-size: 55px !important;
+  color: #909192 !important;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 760px) {
+  .fna-icon {
+    font-size: 35px !important;
+  }
+}
+
+.fna {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 760px) {
+  .fna {
+    font-size: 18px;
   }
 }
 
@@ -130,21 +198,29 @@ body {
   max-height: 100%;
 }
 
-.trigger {
-  display: none;
+.upload-btn {
+  position: absolute !important;
+  right: 15px !important;
+  bottom: 15px !important;
+  width: 45px !important;
+  min-width: 45px !important;
+  height: 45px !important;
+  min-height: 45px !important;
+  border-radius: 100% !important;
+  background-color: #62c22a !important;
+}
+
+.upload-btn-icon {
+  margin: 0 !important;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 760px) {
-  .trigger {
-    display: block;
-    position: fixed;
-    bottom: 15px;
-    width: 60%;
-    height: 6px;
-    border-radius: 3px;
-    background-color: #909192;
-    -webkit-box-shadow: 0px 3px 6px -2px rgba(0, 0, 0, 0.2);
-            box-shadow: 0px 3px 6px -2px rgba(0, 0, 0, 0.2);
+  #toast-container {
+    bottom: 0 !important;
   }
+}
+
+.toast {
+  color: #62c22a !important;
 }
 /*# sourceMappingURL=image_view.css.map */
