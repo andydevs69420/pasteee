@@ -13,11 +13,14 @@ django framework.
   
 \>> <code>py -m pip install -r ./requirements.txt</code> <br>
 
-**RUNSERVER**<br>
+**MIGRATE**<br>
 \>> <code>py manage.py makemigrations</code> <br>
 \>> <code>py manage.py migrate</code>        <br>
 or                                           <br>
 \>> <code>py manage.py migrate --run-syncdb</code> <br>
+
+**RUNSERVER**<br>
+\>> <code>py manage.py runserver</code> <br>
 
 # 📷 SAMPLE SCREENSHOTS
 <div align="left" style="display:inline;">
